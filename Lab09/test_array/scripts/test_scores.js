@@ -34,8 +34,15 @@ const displayResults = () => {
 	const resultsheading = document.createElement("h2");
 	const resultheadingtext = document.createTextNode("Results")
 	resultsheading.appendChild(resultheadingtext);
-	const parentofresultsheading = document.getElementById('scores');
-	parentofresultsheading.append(resultsheading);
+	const headingnode = $("h2");
+	if (headingnode == null){
+		const parentofresultsheading = document.getElementById('scores');
+		parentofresultsheading.append(resultsheading);
+	}
+	else{
+		headingnode.parentNode.replaceChild(resultsheading, headingnode);
+	}
+
 
 	
 	

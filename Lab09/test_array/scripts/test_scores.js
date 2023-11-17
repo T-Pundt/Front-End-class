@@ -3,7 +3,6 @@ const $ = selector => document.querySelector(selector);
 
 const names = ["Ben", "Joel", "Judy", "Anne"];
 const scores = [88, 98, 77, 88];
-let indicator = false;
 
 document.addEventListener("DOMContentLoaded", () => {
 	// add event handlers
@@ -34,9 +33,10 @@ const displayResults = () => {
 	const resultsheading = document.createElement("h2");
 	const resultheadingtext = document.createTextNode("Results")
 	resultsheading.appendChild(resultheadingtext);
-	const headingnode = $("h2");
+	resultsheading.setAttribute('id', 'headone');
+	const headingnode = document.getElementById('headone');
 	if (headingnode == null){
-		const parentofresultsheading = document.getElementById('scores');
+		const parentofresultsheading = document.getElementById('results');
 		parentofresultsheading.append(resultsheading);
 	}
 	else{
@@ -44,34 +44,59 @@ const displayResults = () => {
 	}
 
 
-	
+
 	
 	const averageScorePar = document.createElement("p");
 	const averageScoreText = document.createTextNode(averageScoreString);
 	averageScorePar.appendChild(averageScoreText);
-	const parentofaveragescorepar = document.getElementById('scores');
-	parentofaveragescorepar.append(averageScorePar);
+	averageScorePar.setAttribute('id', 'savg');
+	const averageScoreParNode = document.getElementById('savg');
+	if(averageScoreParNode == null){
+		const parentofaveragescorepar = document.getElementById('results');
+		parentofaveragescorepar.append(averageScorePar);
+	}
+	else{
+		averageScoreParNode.parentNode.replaceChild(averageScorePar, averageScoreParNode);
+	}
+
+
 
 	const maxScorePar = document.createElement("p");
 	const maxscoreParText = document.createTextNode(maxScoreString);
 	maxScorePar.appendChild(maxscoreParText);
-	const parentofmaxscorepar = document.getElementById('scores');
-	parentofmaxscorepar.append(maxScorePar);
+	maxScorePar.setAttribute('id', 'smax')
+	const maxScoreParNode = document.getElementById('smax');
+	if(averageScoreParNode == null){
+		const parentofmaxscorepar = document.getElementById('results');
+		parentofmaxscorepar.append(maxScorePar);	
+	}
+	else{
+		maxScoreParNode.parentNode.replaceChild(maxScorePar, maxScoreParNode)
+	}
 
-	indicator = true;
 }
 
 const displayScores = () => {
 
+	const scoresheading = document.createElement("h2");
+	const scoreheadingtext = document.createTextNode("Scores")
+	scoresheading.appendChild(scoreheadingtext);
+	scoresheading.setAttribute('id', 'headtwo');
+	const headingnode = document.getElementById('headtwo')
+	if (headingnode == null){
+		const parentofscoresheading = document.getElementById('scores');
+		parentofscoresheading.append(scoresheading);
+	}
+	else{
+		headingnode.parentNode.replaceChild(resultsheading, headingnode);
+	}
 
-	const newparagah = document.createElement("p");
-	const text = document.createTextNode(names);
-	newparagah.appendChild(text);
+	
 
-	const theheading = $("scores");
-	const parent = theheading;
 
-	parent.appendChild(newparagah);
+
+
+
 
 
 }

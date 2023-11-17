@@ -1,0 +1,163 @@
+html{
+    background-image: url(../Images/bats.gif);
+    background-repeat: repeat;
+}
+
+
+body {
+    font-family: sans-serif;
+    background-color: white;
+    width: 800px;
+    padding: 0 1em 0 1em;
+    margin: auto;
+    border: 3px solid black;
+    box-shadow: 5px 5px 5em 0;
+}   
+
+h1, h2, h3 {
+    font-size: 175%;
+}
+
+main a {
+    color: orange;
+}
+
+main p {
+    margin-top: -5px;
+}
+
+#W {
+    font-size: 200%;
+}
+
+
+
+header{
+    text-indent: 2em;
+    padding: 1em;
+    margin: 0 -1em;
+    border-bottom: 2px solid black;
+    background-image: linear-gradient(45deg, white, orange 75%, black);
+    
+}
+
+header h2 {
+    margin-top: 7px ;
+    font-size: 250%;
+}
+
+header h3 {
+    font-size: 150%;
+    margin-bottom: -15px;
+    margin-top: -33px;
+}
+
+
+header img{
+    float: left;
+}
+
+a{font-weight: bold;}
+/*a:link {color: rgb(247, 132, 0);}*/
+/*a:hover {color: green;}
+a:focus {color: green;}*/
+
+
+#nav_menu ul {
+	list-style: none;
+	position: relative;
+}
+#nav_menu ul li {
+	float: left;
+}
+#nav_menu ul ul {
+    display: none;
+	position: absolute;
+	top: 100%;
+}
+
+#nav_menu ul ul li {
+    float: none;
+}
+
+#nav_menu ul li:hover > ul {
+	display: block;           
+}
+
+#nav_menu > ul::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+#nav_menu ul li ul li:hover > a{
+    background-color: grey;
+}
+
+
+
+#nav_menu ul {
+	margin: 0;
+	padding: 0;
+}
+#nav_menu ul li a {
+	text-align: center;
+	display: block;
+	width: 192px;
+	padding: .7em 0;
+    margin-left: -1em;
+    margin-right: -1em;
+	text-decoration: none;
+	background-color: black;
+    color: white;
+}
+#nav_menu ul li a.current {
+	color: orange !important;
+}
+
+
+
+
+
+aside {
+    width: 160px;
+    float: left;
+    padding-bottom: 100%;
+    padding-right: 1em;
+    margin-left: -2em;
+}
+
+aside ul {
+    list-style-type: none;   
+}
+
+aside ul li {
+    font-size: 80%;
+    font-weight: bold;
+    width: 100px;
+    margin-bottom: 1.5em;
+    border: 2px solid black;
+    background-color: orange;
+}
+
+aside ul li a {
+    display: block;
+    padding: .5em;
+    text-decoration: none;
+    color:black
+}
+
+
+footer {
+    padding: 1em;
+    margin: 0 -1em;
+    border-top: 2px solid black;
+    background-image: linear-gradient(45deg, black, orange 25%, white);
+}
+
+footer p {
+    font-size: 75%;
+    text-align: center;
+    margin-top: -3px;
+    margin-bottom: -3px;
+}

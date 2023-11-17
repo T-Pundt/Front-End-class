@@ -79,7 +79,8 @@ const displayResults = () => {
 
 const displayScores = () => {
 
-	
+	const thecontainer = document.getElementById('scores');
+	thecontainer.textContent = "";
 
 	const scoresheading = document.createElement("h2");
 	const scoreheadingtext = document.createTextNode("Scores")
@@ -106,21 +107,32 @@ const displayScores = () => {
 	}
 	
 
-
-
-
-
-
 }
 
 const addScore = () => {
 	const name = $("#name").value;
 	const score = parseFloat($("#score").value);
-	let msgs = [];
+	var indicator = 0;
 
-	//add validity
+	const nameerrorcontainer = document.getElementById('nameError');
+	nameerrorcontainer.textContent = "";
 
-	if(msgs.length == 0){
+	const scoreerrorcontainer = document.getElementById('scoreError');
+	scoreerrorcontainer.textContent = "";
+
+	if(name == ""){
+		const namespan = document.getElementById('nameError');
+		namespan.textContent = 'Please Enter a name';
+		indicator = 1;
+	}
+
+	if(score>100 || score<0 || isNaN(score)){
+		const scorespan = document.getElementById('scoreError')
+		scorespan.textContent = 'Score must be between 0 and 100';
+		indicator = 1;
+	}
+
+	if(indicator == 0){
 		names[names.length] = name;
 		scores[scores.length] = score;
 	}

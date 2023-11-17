@@ -3,6 +3,7 @@ const $ = selector => document.querySelector(selector);
 
 const names = ["Ben", "Joel", "Judy", "Anne"];
 const scores = [88, 98, 77, 88];
+$("#name").focus();
 
 document.addEventListener("DOMContentLoaded", () => {
 	// add event handlers
@@ -78,6 +79,8 @@ const displayResults = () => {
 
 const displayScores = () => {
 
+	
+
 	const scoresheading = document.createElement("h2");
 	const scoreheadingtext = document.createTextNode("Scores")
 	scoresheading.appendChild(scoreheadingtext);
@@ -88,11 +91,20 @@ const displayScores = () => {
 		parentofscoresheading.append(scoresheading);
 	}
 	else{
-		headingnode.parentNode.replaceChild(resultsheading, headingnode);
+		headingnode.parentNode.replaceChild(scoresheading, headingnode);
 	}
 
-	
+	for(var i = 0; i<scores.length; ++i){
+		var string = names[i] + "	" + scores[i];
+		const nameline = document.createElement("p");
+		const namelineText = document.createTextNode(string);
+		nameline.appendChild(namelineText);
+		const parentofnameline = document.getElementById('scores')
+		parentofnameline.append(nameline);
 
+
+	}
+	
 
 
 
@@ -113,5 +125,6 @@ const addScore = () => {
 		scores[scores.length] = score;
 	}
 
+	$("#name").focus();
 
 }
